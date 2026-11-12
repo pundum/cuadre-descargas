@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Descargar Cuadre</title>
+<meta name="description" content="Cuadre: ventas, inventario y cuadre de caja para tu restaurante. Funciona sin internet.">
+<link rel="icon" href="favicon.png">
+<meta property="og:title" content="Descargar Cuadre">
+<meta property="og:description" content="Ventas, inventario y cuadre de caja para tu restaurante. Funciona sin internet.">
+<meta property="og:image" content="icono.png">
+<style>
+  :root {
+    --fondo: #f2f5fa;
+    --tarjeta: #ffffff;
+    --texto: #142038;
+    --suave: #56627a;
+    --linea: #dde4ef;
+    --azul: #2563c9;
+    --azul-texto: #ffffff;
+    --verde: #1f9d55;
+    --paso: #e8effb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fondo: #0b1220;
+      --tarjeta: #141e32;
+      --texto: #eef2fa;
+      --suave: #a3afc4;
+      --linea: #26324c;
+      --azul: #7cb8ff;
+      --azul-texto: #0b1220;
+      --verde: #6fe39a;
+      --paso: #1f2b45;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  main { max-width: 640px; margin: 0 auto; padding: 32px 16px 48px; }
+  header { text-align: center; margin-bottom: 28px; }
+  header img { width: 112px; height: 112px; border-radius: 26px; box-shadow: 0 8px 24px rgba(20, 50, 110, .25); }
+  h1 { font-size: 2.2rem; margin: 16px 0 4px; }
+  .lema { color: var(--suave); margin: 0; }
+  .tarjeta {
+    background: var(--tarjeta);
+    border: 1px solid var(--linea);
+    border-radius: 20px;
+    padding: 24px 20px;
+    margin-bottom: 20px;
+  }
+  h2 { font-size: 1.35rem; margin: 0 0 4px; }
+  .detalle { color: var(--suave); margin: 0 0 18px; font-size: 1rem; }
+  .boton {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%; min-height: 64px; padding: 14px 20px;
+    background: var(--azul); color: var(--azul-texto);
+    border-radius: 16px; text-decoration: none;
+    font-size: 1.2rem; font-weight: 700;
+  }
+  .boton:active { transform: scale(.98); }
+  .boton svg { width: 26px; height: 26px; flex: none; }
+  ol { padding: 0; margin: 22px 0 0; list-style: none; counter-reset: paso; }
+  ol li {
+    counter-increment: paso;
+    display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start;
+    margin-bottom: 14px;
+  }
+  ol li::before {
+    content: counter(paso);
+    width: 36px; height: 36px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: var(--paso); color: var(--azul); font-weight: 700;
+  }
+  .toque {
+    display: inline-block; padding: 1px 10px; border-radius: 8px;
+    background: var(--paso); color: var(--azul); font-weight: 700; white-space: nowrap;
+  }
+  .otra { display: block; margin-top: 16px; color: var(--suave); font-size: .95rem; }
+  .otra a { color: var(--azul); }
+  .aviso { color: var(--suave); font-size: .95rem; }
+  .despues h2 { display: flex; align-items: center; gap: 8px; }
+  .despues h2 span { color: var(--verde); }
+  .version { text-align: center; color: var(--suave); font-size: .9rem; min-height: 1.5em; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="icono.png" alt="" width="112" height="112">
+    <h1>Cuadre</h1>
+    <p class="lema">Ventas, inventario y cuadre de caja para tu restaurante. Funciona sin internet.</p>
+  </header>
+
+  <section class="tarjeta" id="android">
+    <h2>Tablet o celular Android</h2>
+    <p class="detalle">Unos 20&nbsp;MB.</p>
+    <a class="boton" id="enlace-android" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg>
+      Descargar para Android
+    </a>
+    <ol>
+      <li><span>Toca el botón azul y espera a que termine la descarga.</span></li>
+      <li><span>Abre el archivo <b>Cuadre</b> desde la notificación o desde la app <b>Archivos</b>.</span></li>
+      <li><span>La primera vez Android pregunta si permite instalar apps de esta fuente: toca <span class="toque">Configuración</span>, activa <span class="toque">Permitir</span> y vuelve atrás. Es solo una vez.</span></li>
+      <li><span>Toca <span class="toque">Instalar</span>. Cuadre queda con su ícono junto a tus apps.</span></li>
+    </ol>
+    <span class="otra">¿Dice “App no instalada”? Tu tablet es más antigua:
+      <a id="enlace-universal" href="#">descarga esta otra versión</a> (55&nbsp;MB).</span>
+  </section>
+
+  <section class="tarjeta" id="windows">
+    <h2>Computador con Windows</h2>
+    <p class="detalle">Windows 10 u 11 · unos 11&nbsp;MB.</p>
+    <a class="boton" id="enlace-windows" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg>
+      Descargar para Windows
+    </a>
+    <ol>
+      <li><span>Toca el botón azul y abre el archivo descargado.</span></li>
+      <li><span>Toca <span class="toque">Siguiente</span>, <span class="toque">Instalar</span> y <span class="toque">Finalizar</span>. No pide contraseña.</span></li>
+      <li><span>Si aparece “Windows protegió su PC”, toca <span class="toque">Más información</span> y luego <span class="toque">Ejecutar de todas formas</span>.</span></li>
+    </ol>
+  </section>
+
+  <section class="tarjeta" id="iphone" hidden>
+    <h2>iPhone o iPad</h2>
+    <p class="aviso">Por ahora Cuadre funciona en tablets y celulares Android y en computadores con Windows.</p>
+  </section>
+
+  <section class="tarjeta despues">
+    <h2><span>✓</span> Después de instalar</h2>
+    <ol>
+      <li><span>Abre Cuadre y crea tu usuario y contraseña.</span></li>
+      <li><span>La app te muestra tu <b>clave de instalación</b>. Envíasela a quien te compartió este enlace.</span></li>
+      <li><span>Te llega tu <b>código de activación</b>: escríbelo en la app y listo.</span></li>
+    </ol>
+  </section>
+
+  <p class="version" id="version"></p>
+</main>
+
+<script>
+  // Repositorio público donde viven los instaladores (GitHub Releases).
+  // Los archivos de cada versión se suben siempre con estos mismos nombres,
+  // así esta página nunca hay que cambiarla.
+  const REPO = 'pundum/cuadre-descargas';
+  const base = `https://github.com/${REPO}/releases/latest/download/`;
+  document.getElementById('enlace-android').href = base + 'Cuadre-Android.apk';
+  document.getElementById('enlace-universal').href = base + 'Cuadre-Android-universal.apk';
+  document.getElementById('enlace-windows').href = base + 'Cuadre-Windows.exe';
+
+  // Muestra primero lo que sirve para el equipo de quien abre el enlace.
+  const ua = navigator.userAgent;
+  const esIos = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const main = document.querySelector('main');
+  const header = document.querySelector('header');
+  if (esIos) {
+    document.getElementById('iphone').hidden = false;
+    header.after(document.getElementById('iphone'));
+  } else if (/Windows/.test(ua)) {
+    header.after(document.getElementById('windows'));
+  }
+
+  // Versión y fecha de la última publicación (si no hay internet o falla, no se muestra).
+  fetch(`https://api.github.com/repos/${REPO}/releases/latest`)
+    .then(r => r.ok ? r.json() : null)
+    .then(v => {
+      if (!v) return;
+      const fecha = new Date(v.published_at).toLocaleDateString('es-CO', { day: 'numeric', month: 'long', year: 'numeric' });
+      document.getElementById('version').textContent = `Versión ${v.tag_name.replace(/^v/, '')} · ${fecha}`;
+    })
+    .catch(() => {});
+</script>
+</body>
+</html>
